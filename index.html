@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나 혼자만 레벨업: THE SYSTEM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        system: {
+                            dark: '#0a0e17',
+                            blue: '#00a8ff',
+                            glow: '#0077ff',
+                            text: '#e0f2fe',
+                            panel: '#111827'
+                        },
+                        rank: {
+                            E: '#9ca3af',
+                            D: '#22c55e',
+                            C: '#3b82f6',
+                            B: '#a855f7',
+                            A: '#ef4444',
+                            S: '#eab308'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'],
+                    },
+                    animation: {
+                        'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'typewriter': 'typewriter 0.5s steps(40, end)',
+                        'shake': 'shake 0.5s cubic-bezier(.36,.07,.19,.97) both',
+                        'attack-thrust': 'attack-thrust 0.2s ease-in-out',
+                        'damage-shake': 'damage-shake 0.4s cubic-bezier(.36,.07,.19,.97) both',
+                        'skill-flash': 'skill-flash 0.5s ease-out',
+                    },
+                    keyframes: {
+                        'pulse-glow': {
+                            '0%, 100%': { opacity: 1, boxShadow: '0 0 10px #0077ff' },
+                            '50%': { opacity: .7, boxShadow: '0 0 20px #00a8ff' },
+                        },
+                        'shake': {
+                            '10%, 90%': { transform: 'translate3d(-1px, 0, 0)' },
+                            '20%, 80%': { transform: 'translate3d(2px, 0, 0)' },
+                            '30%, 50%, 70%': { transform: 'translate3d(-4px, 0, 0)' },
+                            '40%, 60%': { transform: 'translate3d(4px, 0, 0)' }
+                        },
+                        'attack-thrust': {
+                            '0%': { transform: 'translateY(0) scale(1)' },
+                            '50%': { transform: 'translateY(-20px) scale(1.05)' },
+                            '100%': { transform: 'translateY(0) scale(1)' }
+                        },
+                        'damage-shake': {
+                             '0%': { transform: 'translate(0, 0)' },
+                             '25%': { transform: 'translate(5px, 5px)' },
+                             '50%': { transform: 'translate(-5px, -5px)' },
+                             '75%': { transform: 'translate(5px, -5px)' },
+                             '100%': { transform: 'translate(0, 0)' }
+                        },
+                        'skill-flash': {
+                            '0%': { filter: 'brightness(1) sepia(0)' },
+                            '50%': { filter: 'brightness(2) sepia(1) hue-rotate(190deg)' },
+                            '100%': { filter: 'brightness(1) sepia(0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #050505;
+            color: #e0f2fe;
+        }
+        /* Custom Scrollbar for System Log */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0e17; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e3a8a; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3b82f6; 
+        }
+        .system-border {
+            border: 1px solid #1e3a8a;
+            box-shadow: 0 0 15px rgba(30, 58, 138, 0.3);
+        }
+        .text-glow {
+            text-shadow: 0 0 5px rgba(0, 168, 255, 0.7);
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0"
+  }
+}
+</script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>
